@@ -1,0 +1,70 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: RedPitayaSTCL
+message: >-
+  If you use this software, please cite as below.
+authors:
+  - given-names: Einius
+    family-names: Pultinevicius
+  - family-names: Rockenhäuser
+    given-names: Marian
+  - given-names: Felix
+    family-names: Kogel
+  - given-names: Phillip
+    family-names: Groß
+  - given-names: Tatsam
+    family-names: Garg
+  - given-names: Ole Einar
+    family-names: Prochnow
+  - given-names: Tim
+    family-names: Langen
+    email: t.langen@physik.uni-stuttgart.de
+    orcid: "https://orcid.org/0000-0003-2561-0326"
+repository-code: 'https://github.com/LangenGroup/RedPitayaSTCL'
+url: 'http://www.coldmolecules.de'
+abstract: >-
+  Many experiments in atomic and molecular physics require
+  simultaneous frequency stabilization of multiple lasers.
+  We present a stabilization scheme based on a scanning
+  transfer cavity lock that is simple, stable and easily
+  scalable to many lasers at minimal cost. The scheme is
+  based on the Red Pitaya STEMlab platform, with custom
+  software developed and implemented to achieve up to 100 Hz
+  bandwidth. As an example demonstration, we realize
+  simultaneous stabilization of up to four lasers and a
+  reduction of long-term drifts to well below 1 MHz per
+  hour. This meets typical requirements, e.g. for
+  experiments on laser cooling of molecules.
+keywords:
+  - laser stabilization
+  - laser cooling
+  - cold molecules
+  - transfer cavity
+  - laser locking
+  - RedPitaya
+license: GPL-3.0
+preferred-citation:
+  type: article
+  authors:
+  - given-names: Einius
+    family-names: Pultinevicius
+  - family-names: Rockenhäuser
+    given-names: Marian
+  - given-names: Felix
+    family-names: Kogel
+  - given-names: Phillip
+    family-names: Groß
+  - given-names: Tatsam
+    family-names: Garg
+  - given-names: Ole Einar
+    family-names: Prochnow
+  - given-names: Tim
+    family-names: Langen
+    email: t.langen@physik.uni-stuttgart.de
+    orcid: "https://orcid.org/0000-0003-2561-0326"
+  url: https://arxiv.org/abs/2307.10217
+  journal: "arxiv:2307.10217"
+  title: "A scalable scanning transfer cavity laser stabilization scheme based on the Red Pitaya STEMlab platform"
+  year: 2023
