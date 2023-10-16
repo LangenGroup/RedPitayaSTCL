@@ -175,6 +175,23 @@ class RP_connection:
         self.loop_running = False  # boolean, whether loop is running or not.
         self.connected = False
 
+    def _check_ext_scan(func):
+        """
+        Decorator which is applied to each method of RP_communication. Checks,
+        whether the object is fake, e.g. when using external cavity scans with
+        a fake RP object, or not. Nothing should happen if no real RP object
+        exists.
+        """
+
+        # checks if a loop is already running before starting a new one.
+        def inner(self, *args, **kwargs):
+            if self.mode == "ext_scan":  # no communication!
+                return None
+            else:
+                return func(self, *args, **kwargs)
+        return inner
+
+    @_check_ext_scan
     def reboot(self):
         ssh = (
             paramiko.SSHClient()
@@ -190,6 +207,7 @@ class RP_connection:
         print("Rebooting, please wait a bit before attempting to reconnect.")
         return
 
+    @_check_ext_scan
     def upload_current(self):
         """
         Used for uploading python scripts from PC to RedPitaya. The required scripts
@@ -247,6 +265,7 @@ class RP_connection:
         sftp.close()
         ssh.close()
 
+    @_check_ext_scan
     def start_host_server(self):
         """
         This function starts the host server on the redpitaya by running a certain script.
@@ -274,6 +293,7 @@ class RP_connection:
         self.connected = True
         return "connected"
 
+    @_check_ext_scan
     def connect_socket(self, addr):
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # IPv4 TCP socket
         sock.settimeout(5)  # 10 second timeout instead of default 120s
@@ -285,6 +305,7 @@ class RP_connection:
         sock.setblocking(False)  # non-blocking mode
         return sock
 
+    @_check_ext_scan
     def send(
         self, Sender, action, value="Hello World!", loop_action=False, loop=False
     ):  # Sender contains the event_loop that handles the multiple communications
@@ -356,6 +377,7 @@ class RP_connection:
 
         return result
 
+    @_check_ext_scan
     def create_request(self, action, value):  # copied from RealPython.
         """
         orders the content of requests that are sent during communication.
