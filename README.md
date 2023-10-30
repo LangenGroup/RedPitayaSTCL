@@ -77,9 +77,23 @@ On the RedPitayas no packages have to be installed, since the STCL code is trans
 
 ### Usage
 
+#### Quick start
+
 A usage example is provided under `RedPitayaSTCL/examples/OperationExample.py`, where the general steps for using the STCL are described in detailed comments. First, for setting up the socket communication, the IPv4 addresses of the devices need to be provided. Executing the first code block should then initialize a connection to the RP units and transfer all necessary codes. The second code block starts up the lock. The remaining code blocks of this example, explain the operation of the STCL, including how to set the voltage ranges, PID and other parameters. 
 
 In more detail, for the connections each device is defined in a dicitonary with an indentifying key. This key is also used to name and load the respective settings files. These files, which contain the lock settings, are located by default in `RedPitayaSTCL/settings` and are automatically created when executing the example code. The respective outputs of the locking RedPitayas (Out1 and Out2) can be labeled in these settings according to the use of the lasers in the respective entries `Slave1` and `Slave2`. The entry `Master` contains a string corresponding to the identifying key of the scanning Redpitaya (e.g. 'Cav') for the locking and monitoring redpitayas. If the scanning RedPitaya is defined with another key, this entry should be changed (which can also be done using the `change_cavity` method of the `LockClient` class). For the scanning redpitayas, the entry `Master` contains the locksettings.
+
+
+#### Feed-forward cavity drift and non-linearity compensation: 
+
+Due to external influences, long-term drifts of the transfer cavitiy may reach values that can no longer be compensated by the Red Pitaya locking output or the cavity piezo. To compensate for this, it is possible to employ cavities with a second, large travel range piezo actuator, in combination with a feed-forward approach. 
+
+The second piezo actuator enables the control of a cavity's overall length independent from the scanning piezo actuator that is used for fast locking. By recording the slow drifts of the fast locking signal, a feed-forward signal is generated which compensates these drifts using the second piezo. In this way, it is possible to effectively compensate any significant drift that may occur during operation of the SCTL. Moreover, this feed-forward can be used to maintain the scanning piezo within its desired linear response regime, which will guarantee a well controlled scanning procedure.
+
+To realize feed-forward, an additional Red Pitaya unit is required that records the long-term drifts of the lock and provides feedback to the second piezo via a programmable power supply (current implementation: Owon SP3103, but any other programmable power supply should be possible as well). The additional script can be found in the folder `RedPitayaSTCL/examples/FeedForward/` and uses the standard library `redpitaya_scpi`. 
+
+With this addition, it is possible to keep the lock stable over at least several hours.
+
 
 
 
