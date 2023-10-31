@@ -94,8 +94,9 @@ To realize feed-forward, an additional Red Pitaya unit is required that records 
 
 With this addition, it is possible to keep the lock stable over at least several hours.
 
+#### Usage as a frequency monitor:
 
-
+The error signal of the unstabilized follower laser(s) can also serve as a frequency reference, e.g. in a spectroscopy measurement. In such a measurement the laser(s) are typically scanned externally and one is interested in assigning a precise frequency to each datapoint. To achieve this we calibrate the frequency axis by locking the cavity and setting the laser to be scanned to the lowest and highest desired frequency of the scan. These frequency values are calibrated by recording frequency samples on a wavemeter. Through this procedure, we obtain a mapping from “error space” to frequency space via a linear fit through the error-frequency value pairs. The error of this mapping is limited primarily by the wavemeter uncertainty, as the cavity error is on the order of 1 MHz. If the laser frequency scan behaves non-linearly, the wavemeter monitoring can be run in the background during the entire measurement, so that during the evaluation the nonlinearity can be accounted for. An example can be found in `RedPitayaSTCL/examples//OperationExampleFrequencyMonitorin.py`.
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
