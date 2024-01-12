@@ -734,7 +734,7 @@ class LockClient(Sender):
         for RP in RPs:
             dec0 = self.get_current_dec(RP)
             self.rescale_settings(RP, dec / dec0)  # adjust the settings accordingly!
-# afterwards, overwrite the setting for the master laser!
+        # afterwards, overwrite the setting for the master laser!
         self.RPs[master_RP].settings["Master"]["dec"] = dec
         for RP in RPs:
             self.save_settings(RP)  # finally save all the settings to the json files!
