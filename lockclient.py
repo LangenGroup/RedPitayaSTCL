@@ -400,10 +400,16 @@ class LockClient(Sender):
                 if (
                     key not in self.RPs[RP].settings[laser]
                 ):  # do not accidently add another setting!
-                    print(f"{key} does not exist in settings!")
-                    return
-            if laser == 'Master' and not (RP in self.masters):
-                print("Master settings can not be changed with this command for a non-scanning RP. If you want to change the scanning cavity, use the method 'change_cavity'")
+                    var input(f"{key} does not exist in settings! Add it? (y/n)")
+                    if var == 'y':
+                        pass
+                    else:
+                        print(f'{key} not added.')
+                        return
+            if laser == "Master" and not (RP in self.masters):
+                print(
+                    "Master settings can not be changed with this command for a non-scanning RP. If you want to change the scanning cavity, use the method 'change_cavity'"
+                )
                 return
 
             if not self.check_new_settings(RP, laser, key, val):
@@ -666,7 +672,7 @@ class LockClient(Sender):
             master_RP
         )  # collect all redpitayas associated with master_RP
         for key in RPs:  # key: RP identifier
-            for val_key, val_val in self.RPs[key].settings.items():  
+            for val_key, val_val in self.RPs[key].settings.items():
                 # val_key: Laser identifier
                 # find master settings
                 s = deepcopy(self.retrieve_settings(key))[val_key]
@@ -725,17 +731,17 @@ class LockClient(Sender):
         if not check_dec(dec):
             return
         #  first, find the redpitayas associated with master_RP
-        RPs = self.find_slave_RPs(master_RP)  
+        RPs = self.find_slave_RPs(master_RP)
         # then, get the recent dec setting and use it to rescale the relevant settings
         for RP in RPs:
             dec0 = self.get_current_dec(RP)
             self.rescale_settings(RP, dec / dec0)  # adjust the settings accordingly!
-# afterwards, overwrite the setting for the master laser!
-        self.RPs[master_RP].settings["Master"]["dec"] = dec  
+        # afterwards, overwrite the setting for the master laser!
+        self.RPs[master_RP].settings["Master"]["dec"] = dec
         for RP in RPs:
             self.save_settings(RP)  # finally save all the settings to the json files!
             # ... and send the setting to the redpitayas!
-            self.send(RP, "set_dec", value=dec)  
+            self.send(RP, "set_dec", value=dec)
         sleep(0.5)  # wait a bit until the decimation on the redpitayas is set up!
 
     ################ Monitoring related functions ######################
