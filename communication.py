@@ -189,6 +189,7 @@ class RP_connection:
                 return None
             else:
                 return func(self, *args, **kwargs)
+
         return inner
 
     @_check_ext_scan
