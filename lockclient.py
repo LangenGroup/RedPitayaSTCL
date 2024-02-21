@@ -400,7 +400,7 @@ class LockClient(Sender):
                 if (
                     key not in self.RPs[RP].settings[laser]
                 ):  # do not accidently add another setting!
-                    var input(f"{key} does not exist in settings! Add it? (y/n)")
+                    var = input(f"{key} does not exist in settings! Add it? (y/n)")
                     if var == 'y':
                         pass
                     else:
