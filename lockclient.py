@@ -820,10 +820,13 @@ class LockClient(Sender):
             return
         # get monitor settings, which contains all lasers
         monitor_RP = self.find_monitor_RP(RP)
-        if self.monitors[monitor_RP]["running"].value:
-            self.set_monitor_of_type(monitor_RP, Type="cavity")
-        elif self.monitors[monitor_RP]["running_err"].value:
-            self.set_monitor_of_type(monitor_RP, Type="errors")
+        if monitor_RP is not None:
+            if self.monitors[monitor_RP]["running"].value:
+                self.set_monitor_of_type(monitor_RP, Type="cavity")
+            elif self.monitors[monitor_RP]["running_err"].value:
+                self.set_monitor_of_type(monitor_RP, Type="errors")
+        else:
+            warnings.warn('Tried to set a monitor, but did not find one in the dictionary')
 
     def stop_monitor(self, RP):
         """
