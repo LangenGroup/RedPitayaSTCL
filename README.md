@@ -4,6 +4,8 @@
 This project strives to provide a transfer cavity locking system using
 RedPitaya boards [STEMlab 125-14](https://redpitaya.com/product/stemlab-125-14/). For this purpose, the software uses socket servers in order to remotely control the RedPitayas, such that any locking steps and data evaluation can be carried out directly on their CPU. That way the fast analog inputs and outputs can be controlled remotely without significant data transfer of measured signals to a PC. 
 
+Note that there has recently been an update of the Red Pitaya Board (Version 1.1). Currently this code is only compatible with the old revision (Version 1.0).
+
 ## How does the STCL work?
 
 ### STCL principle
