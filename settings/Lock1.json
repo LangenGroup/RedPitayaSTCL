@@ -1,0 +1,42 @@
+{
+    "Master": "Cav",
+    "Slave1": {
+        "label": "Cooler",
+        "PID": {
+            "P": 0.2,
+            "I": 50
+        },
+        "range": [
+            1.0,
+            1.5
+        ],
+        "sign": -1,
+        "lockpoint": 1.15,
+        "enabled": true,
+        "peak_finder": {
+            "name": "SG_deriv",
+            "window_size": 21,
+            "order": 1
+        }
+    },
+    "Slave2": {
+        "label": "Repumper1",
+        "PID": {
+            "P": 0,
+            "I": 1,
+            "D": 0.0
+        },
+        "range": [
+            0.5,
+            0.8
+        ],
+        "sign": -1,
+        "lockpoint": 0.65,
+        "enabled": true,
+        "peak_finder": {
+            "name": "SG_deriv",
+            "window_size": 21,
+            "order": 1
+        }
+    }
+}
