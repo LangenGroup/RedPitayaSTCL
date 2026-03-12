@@ -5856,6 +5856,12 @@
 		(uuid "21ab09cf-bb0f-4b8c-8a08-c17322413757")
 	)
 	(junction
+		(at 33.02 156.21)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2a16895f-843e-4fd3-a877-69b670b673fc")
+	)
+	(junction
 		(at 337.82 123.19)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5952,10 +5958,10 @@
 		(uuid "6e81d543-c0b3-4cd3-91c4-9b5a48ddc9a7")
 	)
 	(junction
-		(at 173.99 137.16)
+		(at 33.02 133.35)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "72dc5f84-ff2f-41d8-b9a3-c1f2da903a44")
+		(uuid "733c4112-09e6-4217-a21b-8b7e6e8b5130")
 	)
 	(junction
 		(at 110.49 180.34)
@@ -5968,6 +5974,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8152cd8e-ea7f-4fa3-87a0-067515a9090c")
+	)
+	(junction
+		(at 49.53 41.91)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "850cf342-d840-4f99-b234-a44ddab855d0")
 	)
 	(junction
 		(at 50.8 143.51)
@@ -5986,6 +5998,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9033d8d2-b758-4531-a420-a680b77febc8")
+	)
+	(junction
+		(at 172.72 137.16)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "937f4b02-cc21-4ef5-ade8-e19d4c034454")
 	)
 	(junction
 		(at 351.79 62.23)
@@ -6068,7 +6086,7 @@
 		(uuid "c512b2e7-fd01-4666-a728-a7c9445b7ff4")
 	)
 	(no_connect
-		(at 173.99 109.22)
+		(at 168.91 113.03)
 		(uuid "e1e7050d-9c2c-4718-a649-01176755c420")
 	)
 	(no_connect
@@ -6357,16 +6375,6 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 137.16) (xy 173.99 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "35165c67-4601-4145-b827-ad0fb9280913")
-	)
-	(wire
-		(pts
 			(xy 29.21 95.25) (xy 26.67 95.25)
 		)
 		(stroke
@@ -6424,6 +6432,16 @@
 			(type default)
 		)
 		(uuid "3d4910e3-87c3-43c0-a826-62162aea4412")
+	)
+	(wire
+		(pts
+			(xy 33.02 133.35) (xy 40.64 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3f4c54b5-ef45-479f-bb48-8398f73a9cfe")
 	)
 	(wire
 		(pts
@@ -6547,6 +6565,16 @@
 	)
 	(wire
 		(pts
+			(xy 172.72 116.84) (xy 172.72 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b4f20eb-90af-42dd-9602-0dbc264c357a")
+	)
+	(wire
+		(pts
 			(xy 39.37 180.34) (xy 41.91 180.34)
 		)
 		(stroke
@@ -6557,6 +6585,16 @@
 	)
 	(wire
 		(pts
+			(xy 176.53 113.03) (xy 256.54 113.03)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4e31ae31-b0bc-428b-ab6a-dd62e041a9b0")
+	)
+	(wire
+		(pts
 			(xy 63.5 156.21) (xy 69.85 156.21)
 		)
 		(stroke
@@ -6564,16 +6602,6 @@
 			(type solid)
 		)
 		(uuid "4f90c3c3-05c1-468c-9d44-8389deb9f8be")
-	)
-	(wire
-		(pts
-			(xy 177.8 113.03) (xy 256.54 113.03)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5694f480-67da-49dd-a439-b3c82dd6f5e3")
 	)
 	(wire
 		(pts
@@ -6664,6 +6692,16 @@
 			(type solid)
 		)
 		(uuid "61cea859-80ab-48bc-aebb-dae8c463fc5a")
+	)
+	(wire
+		(pts
+			(xy 30.48 133.35) (xy 33.02 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63a0f0d1-73e8-466f-a147-4bb90ffa5096")
 	)
 	(wire
 		(pts
@@ -7057,16 +7095,6 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 116.84) (xy 173.99 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ab36772d-909d-4575-8ff1-1d098d43918a")
-	)
-	(wire
-		(pts
 			(xy 177.8 69.85) (xy 175.26 69.85)
 		)
 		(stroke
@@ -7267,6 +7295,16 @@
 	)
 	(wire
 		(pts
+			(xy 29.21 41.91) (xy 49.53 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb2aaa9c-fcbb-4249-80dc-3e7d38993636")
+	)
+	(wire
+		(pts
 			(xy 368.3 142.24) (xy 373.38 142.24)
 		)
 		(stroke
@@ -7294,6 +7332,16 @@
 			(type default)
 		)
 		(uuid "ce454827-800e-4b22-8045-ab5e8fe04152")
+	)
+	(wire
+		(pts
+			(xy 172.72 137.16) (xy 180.34 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d2e9828a-5764-431d-bbbf-bfb8cc45a73e")
 	)
 	(wire
 		(pts
@@ -7337,7 +7385,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 137.16) (xy 180.34 137.16)
+			(xy 160.02 137.16) (xy 172.72 137.16)
 		)
 		(stroke
 			(width 0)
@@ -7427,6 +7475,16 @@
 	)
 	(wire
 		(pts
+			(xy 30.48 156.21) (xy 33.02 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e525cf02-87a8-41d1-9660-b98c4cdc8265")
+	)
+	(wire
+		(pts
 			(xy 251.46 33.02) (xy 251.46 59.69)
 		)
 		(stroke
@@ -7454,6 +7512,16 @@
 			(type default)
 		)
 		(uuid "e8eff611-7a38-49e4-a222-12294c1b5f39")
+	)
+	(wire
+		(pts
+			(xy 33.02 156.21) (xy 40.64 156.21)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e95b1903-d546-4255-af89-f9f55ef5f285")
 	)
 	(wire
 		(pts
@@ -7494,6 +7562,16 @@
 			(type default)
 		)
 		(uuid "f148a6a2-f6aa-4895-bb80-41e17f6ef037")
+	)
+	(wire
+		(pts
+			(xy 49.53 41.91) (xy 60.96 41.91)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f1df3fd1-cc47-4a5d-8ae8-a912e2a1f4be")
 	)
 	(wire
 		(pts
@@ -8469,6 +8547,76 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 33.02 160.02 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "164bb47f-a233-4eac-bc2e-8a50c3543732")
+		(property "Reference" "C21"
+			(at 36.83 158.7499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10uF"
+			(at 36.83 161.2899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+			(at 33.9852 163.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 33.02 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 33.02 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "fd7a07b6-c472-434c-acca-6966dd6f49cc")
+		)
+		(pin "1"
+			(uuid "df94b710-8753-4bbd-830d-e03120686552")
+		)
+		(instances
+			(project "RedPitayaBoardV3"
+				(path "/55a7d014-5b5f-4db5-b9d5-c49e86c8d312"
+					(reference "C21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "RedPitayaBoard-eagle-import:GND")
 		(at 64.77 241.3 270)
 		(unit 1)
@@ -8810,7 +8958,8 @@
 	)
 	(symbol
 		(lib_id "Device:R_Potentiometer_Trim")
-		(at 173.99 113.03 0)
+		(at 172.72 113.03 90)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8819,7 +8968,7 @@
 		(fields_autoplaced yes)
 		(uuid "1de890d0-82c8-426a-9a94-e5f09ba3126d")
 		(property "Reference" "Gain2"
-			(at 171.45 111.7599 0)
+			(at 171.4499 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8828,7 +8977,7 @@
 			)
 		)
 		(property "Value" "10K"
-			(at 171.45 114.2999 0)
+			(at 173.9899 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8837,7 +8986,7 @@
 			)
 		)
 		(property "Footprint" "RedPitayaBoard:RTRIM3006P_334"
-			(at 173.99 113.03 0)
+			(at 172.72 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8846,7 +8995,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 173.99 113.03 0)
+			(at 172.72 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8855,7 +9004,7 @@
 			)
 		)
 		(property "Description" "Trim-potentiometer"
-			(at 173.99 113.03 0)
+			(at 172.72 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12442,7 +12591,7 @@
 	)
 	(symbol
 		(lib_id "RedPitayaBoard-eagle-import:-15V")
-		(at 38.1 156.21 270)
+		(at 27.94 156.21 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12450,7 +12599,7 @@
 		(dnp no)
 		(uuid "94147ae2-c499-4da7-b159-0b9b9ef3f889")
 		(property "Reference" "#SUPPLY7"
-			(at 38.1 156.21 0)
+			(at 27.94 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12459,7 +12608,7 @@
 			)
 		)
 		(property "Value" "-15V"
-			(at 33.401 153.035 0)
+			(at 23.241 153.035 0)
 			(effects
 				(font
 					(size 1.778 1.5113)
@@ -12468,7 +12617,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 38.1 156.21 0)
+			(at 27.94 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12477,7 +12626,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 38.1 156.21 0)
+			(at 27.94 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12486,7 +12635,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 38.1 156.21 0)
+			(at 27.94 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13158,7 +13307,7 @@
 	)
 	(symbol
 		(lib_id "RedPitayaBoard-eagle-import:+15V")
-		(at 38.1 133.35 90)
+		(at 27.94 133.35 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -13166,7 +13315,7 @@
 		(dnp no)
 		(uuid "9e133312-01c3-4bf2-b821-aa039eefa079")
 		(property "Reference" "#SUPPLY6"
-			(at 38.1 133.35 0)
+			(at 27.94 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13175,7 +13324,7 @@
 			)
 		)
 		(property "Value" "+15V"
-			(at 34.925 135.89 0)
+			(at 24.765 135.89 0)
 			(effects
 				(font
 					(size 1.778 1.5113)
@@ -13184,7 +13333,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 38.1 133.35 0)
+			(at 27.94 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13193,7 +13342,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 38.1 133.35 0)
+			(at 27.94 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13202,7 +13351,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 38.1 133.35 0)
+			(at 27.94 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13240,7 +13389,7 @@
 				)
 			)
 		)
-		(property "Value" "680"
+		(property "Value" "909R"
 			(at 151.13 53.34 90)
 			(effects
 				(font
@@ -13965,6 +14114,72 @@
 	)
 	(symbol
 		(lib_id "RedPitayaBoard-eagle-import:GND")
+		(at 33.02 166.37 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b5ee386c-5694-4c8a-87d9-aa364bf5f5cd")
+		(property "Reference" "#GND033"
+			(at 33.02 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 30.48 168.91 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 33.02 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 33.02 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 33.02 166.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b978837a-513d-493a-b74f-4c49fe4bb3ce")
+		)
+		(instances
+			(project "RedPitayaBoardV3"
+				(path "/55a7d014-5b5f-4db5-b9d5-c49e86c8d312"
+					(reference "#GND033")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "RedPitayaBoard-eagle-import:GND")
 		(at 88.9 195.58 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -14412,6 +14627,139 @@
 			(project "RedPitayaBoardV3"
 				(path "/55a7d014-5b5f-4db5-b9d5-c49e86c8d312"
 					(reference "#SUPPLY14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_Coaxial")
+		(at 66.04 41.91 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c9d71c58-11a1-467e-9ada-20b8a3a7b88f")
+		(property "Reference" "Trig1"
+			(at 65.7226 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "Conn_Coaxial"
+			(at 65.7226 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Connector_Coaxial:SMA_Amphenol_901-144_Vertical"
+			(at 66.04 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 66.04 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, LEMO, ...)"
+			(at 66.04 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "379e937d-ccb4-44d7-83db-707e2f1ee844")
+		)
+		(pin "1"
+			(uuid "f8929134-2b8d-435b-b0fe-589e3cfb5124")
+		)
+		(instances
+			(project "RedPitayaBoardV3"
+				(path "/55a7d014-5b5f-4db5-b9d5-c49e86c8d312"
+					(reference "Trig1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "RedPitayaBoard-eagle-import:GND")
+		(at 66.04 49.53 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cbfeda44-006e-4b9f-b0bf-905361e2a903")
+		(property "Reference" "#GND035"
+			(at 66.04 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 63.5 52.07 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 66.04 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 66.04 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 66.04 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "56b67e11-bc1d-43f6-9de3-3eb944cf753d")
+		)
+		(instances
+			(project "RedPitayaBoardV3"
+				(path "/55a7d014-5b5f-4db5-b9d5-c49e86c8d312"
+					(reference "#GND035")
 					(unit 1)
 				)
 			)
@@ -15259,6 +15607,72 @@
 		)
 	)
 	(symbol
+		(lib_id "RedPitayaBoard-eagle-import:GND")
+		(at 33.02 143.51 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "efa5036c-2d75-483d-8ff5-90c6b1da6d5e")
+		(property "Reference" "#GND034"
+			(at 33.02 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 30.48 146.05 0)
+			(effects
+				(font
+					(size 1.778 1.5113)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 33.02 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 33.02 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 33.02 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "ff5f8de3-f22c-46e3-abc7-383c91a0950c")
+		)
+		(instances
+			(project "RedPitayaBoardV3"
+				(path "/55a7d014-5b5f-4db5-b9d5-c49e86c8d312"
+					(reference "#GND034")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "SamacSys_Parts:LT1007CN8#PBF")
 		(at 177.8 54.61 0)
 		(unit 1)
@@ -15599,6 +16013,76 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C")
+		(at 33.02 137.16 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f3226e2d-0c7f-4bd6-bce4-068bff52347d")
+		(property "Reference" "C22"
+			(at 36.83 135.8899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10uF"
+			(at 36.83 138.4299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+			(at 33.9852 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 33.02 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor"
+			(at 33.02 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "262e3db7-41bb-465a-b2e4-6f03fe277d14")
+		)
+		(pin "1"
+			(uuid "5d661686-170c-46fa-9f93-8c68d8a063ff")
+		)
+		(instances
+			(project "RedPitayaBoardV3"
+				(path "/55a7d014-5b5f-4db5-b9d5-c49e86c8d312"
+					(reference "C22")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:Conn_Coaxial")
 		(at 135.89 57.15 0)
 		(mirror y)
@@ -15900,7 +16384,7 @@
 				)
 			)
 		)
-		(property "Value" "680"
+		(property "Value" "909R"
 			(at 156.21 133.35 90)
 			(effects
 				(font
