@@ -32,13 +32,27 @@ import numpy as np
 import time
 from redpitaya_scpi import scpi
 from serial import Serial
+import socket
 
-# %% definitions of parameters
+## connection parameters
 RP_host = "192.168.0.14"  # IP address of the RedPitaya
+RP_port = 5000
+OWON_port = "COM17"  # COM port of the OWON power supply, check in device manager
+
+# connection test
+try:
+    rp_s_test = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    rp_s_test.settimeout(5)  # 5-second timeout
+    rp_s_test.connect((RP_host, RP_port))
+    print("Connection successful!")
+    rp_s_test.close()
+except Exception as e:
+    print(f"Connection failed: {e}")
+
+## redpitaya parameters
 RP_bits = 14  # bit of the RedPitaya version
 Ch = 1  # Channel of RedPitaya
 rep_data_aqu = 10  # repetitions of the data aquisition of the RedPitaya
-
 
 V_set = (
     -4
@@ -48,7 +62,7 @@ PID_limits = dict(P=0.1, I=0.0, D=0.0, limit=[-0.15, 0.15])
 delta_t = 1  # time delta [s] between one step of the feed-forward
 
 # %% initialize RedPitaya
-rp_s = scpi(host=RP_host)
+rp_s = scpi(host=RP_host,port=RP_port)
 rp_s.tx_txt("ACQ:RST")
 rp_s.tx_txt("ACQ:DEC 64")  # decimation: time resolution = decimation * 8ns
 
@@ -58,7 +72,8 @@ rp_s.tx_txt("ACQ:SOUR2:GAIN HV")
 
 
 # %% function definitions
-class PID:  # proportional-integral-differential (the very same as used in STCL)
+class PID:  
+    """proportional-integral-differential (the very same as used in STCL)"""
     def __init__(self, P=0, I=0, D=0, I_val=0, limit=[-1, 1]):
         self.P = P
         self.I = I
@@ -148,6 +163,7 @@ def OWON_query(conn, s):
 
 
 def OWON_getV(port):  # aquire the voltage of the OWON
+    """Acquire the voltage from the OWON power supply."""
     with Serial(port=port, timeout=0.5, baudrate=115200) as conn:
         value = OWON_query(conn, "VOLT?")
         conn.close()
@@ -155,6 +171,7 @@ def OWON_getV(port):  # aquire the voltage of the OWON
 
 
 def OWON_setV(port, value):  # set the voltage of the OWON
+    """Set the voltage of the OWON power supply."""
     with Serial(port=port, timeout=0.5, baudrate=115200) as conn:
         conn.write(str.encode("VOLTAGE {} \n".format(value)))
         conn.write(str.encode("OUTPut 1 \n"))
@@ -169,6 +186,14 @@ MV_arr = []  # correction voltage for offset piezo
 V_new_arr = []  # set voltages of the offset piezo
 V_scanpiezo_arr = []  # read DC voltages of the scan piezo ramp
 
+#%% Prepare COM port connection (if needed)
+try:
+    with Serial(port=OWON_port, timeout=0.5, baudrate=115200) as conn:
+        conn.open()
+        conn.flush()
+except Exception as e:
+    pass
+
 while True:
     V_scanpiezo = get_scanpiezo_offset(Ch=Ch, rep=rep_data_aqu)
     V_scanpiezo_arr.append(V_scanpiezo)
@@ -176,7 +201,7 @@ while True:
 
     pid.update(e=V_scanpiezo - V_set, t=time.perf_counter())
     print("MV: {:+8.4f} V".format(pid.MV), end=", ")
-    V_old = OWON_getV("COM17")  # previous voltage of OWON
+    V_old = OWON_getV(OWON_port)  # previous voltage of OWON
     V_new = V_old - pid.MV  # new voltage
     MV_arr.append(pid.MV)
     V_new_arr.append(V_new)
@@ -185,7 +210,7 @@ while True:
     if V_new < min(piezo_limits) or V_new > max(piezo_limits):
         raise Exception("Limits of piezo reached: {:.4f}".format(V_new))
     else:
-        OWON_setV("COM17", V_new)
+        OWON_setV(OWON_port, V_new)
         print("Offset piezo new: {:+8.4f} V".format(V_new))
 
     # optional additional sleep time
