@@ -807,20 +807,26 @@ class LockClient(Sender):
                 self.monitors[RP]["queue"].put(("filter", on))
 
     def set_monitor_of_type(self, monitor_RP, Type="cavity"):
-        if Type == "cavity":
-            queue = self.monitors[monitor_RP]["queue"]
-        else:
-            queue = self.monitors[monitor_RP]["queue_err"]
         master_RP = self.find_master_RP(monitor_RP)
         settings = self.retrieve_monitor_settings(master_RP)
-        queue.put(("settings", settings))
+        if Type == "both":
+            self.monitors[monitor_RP]["queue"].put(("settings", settings))
+            self.monitors[monitor_RP]["queue_err"].put(("settings", settings))
+        elif Type == "cavity":
+            queue = self.monitors[monitor_RP]["queue"]
+            queue.put(("settings", settings))
+        else:
+            queue = self.monitors[monitor_RP]["queue_err"]
+            queue.put(("settings", settings))
 
     def set_monitor(self, RP):
         if len(self.monitors) == 0:
             return
         # get monitor settings, which contains all lasers
         monitor_RP = self.find_monitor_RP(RP)
-        if self.monitors[monitor_RP]["running"].value:
+        if self.monitors[monitor_RP]["running"].value and self.monitors[monitor_RP]["running_err"].value:
+            self.set_monitor_of_type(monitor_RP, Type="both")
+        elif self.monitors[monitor_RP]["running"].value:
             self.set_monitor_of_type(monitor_RP, Type="cavity")
         elif self.monitors[monitor_RP]["running_err"].value:
             self.set_monitor_of_type(monitor_RP, Type="errors")
